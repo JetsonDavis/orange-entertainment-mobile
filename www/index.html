@@ -1,0 +1,285 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="Description" content="Orange Entertaiment - is an L.A. based corporation that consults foreign distributors on feature film acquisitions at various stages of production and completion.">
+  <meta name="Keywords" content="Mirjam Wertheim, Steven Murphy, Susan Wrubel, Shawna Dwyer, Orange Entertainment, Feature Film, Acquistions">
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="format-detection" content="telephone=no" />
+  <title>Orange Entertainment</title>
+
+  <link href="css/jquery.mobile-1.3.0.min.css" rel="stylesheet"/>
+  <!--<link href="css/multi.css" rel="stylesheet"/>-->
+  <link href="css/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet"/>  
+
+  <!--<link href="css/jquery.mobile-1.4.5.css" rel="stylesheet"/>
+  <link href="css/jquery.mobile.structure-1.4.5.css" rel="stylesheet"/>-->
+
+  <link href="css/main.css" rel="stylesheet"/>
+  <!--<link href="font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet"/>-->
+
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/jquery.mobile-1.3.0.min.js"></script>
+  
+  <!--<script src="js/jquery-2.1.4.js"></script>
+  <script src="js/jquery.mobile-1.4.5.js"></script>-->
+
+  <script src="cordova.js"></script>
+  <script src="js/mobile.js"></script>
+  
+
+</head>
+
+<body>
+
+<div id="m_main_page>
+	<div id="m_login" data-role="page" data-title="Login">
+        <div data-role="content">
+            <div class='multi'> 
+				<div id="username" class='textInput'>
+					<img src = "img/LOGO_NOBOX.jpg">
+					<label for="m_username" style = "margin: 20px 4px 20px 4px;">Username:</label>
+					<input type="text" id="m_username" name="name" value="" size="15" maxlength="60" class="form-text required login-box"/>													
+					<label for="m_pass" style = "margin: 20px 4px 20px 4px;">Password:</label> 
+					<input type="password" id="m_pass" name="pass" size="15" maxlength="128" class="form-text required login-box"/> 
+					<span class="input-help">
+						<a id = "ask-password" href="/user/password" style="margin-bottom: 10px;">forgot?</br></a>
+					</span>
+					<div class="ui-grid-a" style="width: 265px; margin: auto">
+						<div style="float:left; width: 200px; padding-top: 10px;">
+							<label for = 'keep_logged_in' id='keep-log-label'>Keep me logged in:</label>
+						</div>
+						<div style="float:left; width: 65px; style="align: left">
+							<select name='slider' id='keep_logged_in' data-role='slider'>					
+								<option value='off'>Off</option>
+								<option value='on'>On</option>
+							</select>
+						</div>
+						<br style="clear: left;" />
+					</div>
+					<a href='#' data-role = 'button' id='login_button' class='login'>Login</a>
+				</div>
+			</div>
+     	</div>
+	    <div id="confirm" class="ui-content" data-role="popup" data-theme="none">
+		        <p id="question">No internet connection found.  Please connect your phone to the Internet so Orange Entertainment data can be loaded.</p>
+				<a id="yes" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">OK</a>
+		 </div><!-- /popup -->
+		 <div id="confirm-new-fest" class="ui-content" data-role="popup" data-theme="none">
+	        <p id="question2">Orange Entertainment would like to replace the current film festival data.  All of your favorites will be lost.  Proceed?</p>
+	        <div class="ui-grid-a">
+	            <div class="ui-block-a">
+	                <a id="yes2" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Yes</a>
+	            </div>
+	            <div class="ui-block-b">
+	                <a id="no2" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Cancel</a>
+	            </div>
+	        </div>
+	    </div><!-- /popup -->   
+		 
+	 </div>
+	
+	<div id="m_springboard" data-role="page" data-add-back-btn="false">
+		<div data-role="header" data-position="fixed">
+        	<h1 class="m_font">Orange Entertainment</h1>
+        </div>		
+		<input type='button' value='Films' data-role='button' id='goto_fest' class='springboard-buttons'>
+		<input type='button' value='Companies' data-role='button' id='goto_comp_list' class='springboard-buttons'>
+		<input type='button' value='ABC Lists' data-role='button' id='goto_abc_list' class='springboard-buttons'>
+		<input type='button' value='Screenings' data-role='button' id='goto_screenings' class='springboard-buttons'>
+		<input type='button' value='My Faves' data-role='button' id='goto_my_faves' class='springboard-buttons'>
+		<div id='update-button-wrapper'><input type='button' value='Update' data-role='button' id='update' class='springboard-buttons'><span id ='update-bubble-wrapper'></span></div>
+		<input type='button' value='Search' data-role='button' id='goto_search' class='springboard-buttons'>    
+		 <div id="confirm-new-fest-spring" class="ui-content" data-role="popup" data-theme="none">
+	        <p id="question2">Orange Entertainment would like to replace the current film festival data.  All of your favorites will be lost.  Proceed?</p>
+	        <div class="ui-grid-a">
+	            <div class="ui-block-a">
+	                <a id="yes-spring" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Yes</a>
+	            </div>
+	            <div class="ui-block-b">
+	                <a id="no-spring" data-role="button" data-mini="true" data-shadow="false" data-theme="b" data-rel="back">Cancel</a>
+	            </div>
+	        </div>
+	    </div><!-- /popup -->   
+		   
+	</div>
+
+	 <div id="m_film_list" data-role="page" data-title="Films" data-add-back-btn="true">	
+		<div data-role="header" data-position="fixed">
+        	<h1 class="m_font">Films</h1>
+        </div>
+		<div class="segmented-control ui-bar-c">
+			<div data-role="controlgroup" data-type="horizontal">
+				<a id='film-title-btn' data-role="button" class="ui-control-active">Title</a>
+				<a id='film-salesco-btn' data-role="button" class="ui-control-inactive">Sales Co</a>
+				<!--<a id='film-section-btn' data-role="button" class="ui-control-inactive">Section</a>-->
+			</div>
+		</div>
+		<div data-role="content" id='film_list'>
+			<ul data-role='listview' data-theme='c' id='the-list' data-filter='true' data-input="filterBasic-input" data-filter-placeholder="Search films...."></ul>
+		</div>
+	</div>
+	
+	<div id="m_fest" data-role="page" data-add-back-btn="true">	
+		<div data-role="header" data-position="fixed">
+        	<h1 class="m_font">Films</h1>
+        </div>
+		<div class="segmented-control ui-bar-c">
+			<div data-role="controlgroup" data-type="horizontal">
+				<a id='film-festival-btn' data-role="button" class="ui-control-active">Festival</a>
+				<a href="#m_market" id='film-market-btn' data-role="button" class="ui-control-inactive">Market</a>
+			</div>
+		</div>
+		<div data-role="content" id = "section-wrapper">
+				<!-- Content Gets added here by jQuery -->		
+		</div>    
+	</div>
+
+	<div id="m_market" data-role="page" data-add-back-btn="true">	
+		<div data-role="header" data-position="fixed">
+        	<h1 class="m_font">Films</h1>
+        </div>
+		<div class="segmented-control ui-bar-c">
+			<div data-role="controlgroup" data-type="horizontal">
+				<a href = "#m_fest" id='film-festival-btn' data-role="button" class="ui-control-active">Festival</a>
+				<a id='film-market-btn' data-role="button" class="ui-control-inactive">Market</a>
+			</div>
+		</div>
+		<div data-role="content" id = "m_market_type_list">
+			<ul data-role='listview' data-theme='c' id='market-type-list'>
+				<li class = 'screenings_list market'><a class='ui-link'>Screenings</a></li>
+				<li class = 'promos_list market'><a class='ui-link'>Promos</a></li>
+				<li class = 'projects_list market'><a class='ui-link'>Projects</a></li>
+			</ul>			
+		</div>    
+	</div>
+	
+	<div id="m_film_detail" data-role="page" data-add-back-btn="true">	
+		<div data-role="header" data-position="fixed">
+        	<h1 class="m_font">Film Info</h1>
+        </div>
+		<div data-role="content" id = "m_film_detail_results">
+			<!-- Content Gets added here by jQuery -->
+		</div>    
+	</div>
+		
+	<div id="m_comp_list" data-role="page" data-add-back-btn="true">	
+			<div data-role="header" data-position="fixed">
+	        	<h1 class="m_font">Companies</h1>
+	        </div>
+			<div data-role="content" id = "m_comp_results">
+				<ul data-role='listview' data-theme='c' id='the-comp-list' data-filter='true' data-input="filterBasic-input" data-filter-placeholder="Search companies...."></ul>
+			</div>
+	</div>   
+
+	<div id="m_comp_detail" data-role="page" data-add-back-btn="true">	
+		<div data-role="header" data-position="fixed">
+        	<h1 class="m_font">Company Info</h1>
+        </div>
+		<div data-role="content" id = "m_comp_detail_results">
+			<!-- Content Gets added here by jQuery -->
+		</div>    
+	</div>
+		
+	<div id="m_abc_menu" data-role="page" data-add-back-btn="true">	
+			<div data-role="header" data-position="fixed">
+	        	<h1 class="m_font">ABC Lists</h1>
+	        </div>
+			<div data-role="content" id = "m_abc_menu">
+				<ul data-role='listview' data-theme='c' id='abc-menu' >
+					<!--<li class = 'all-abc'><a href='#' class='ui-link'>All</a></li>  -->
+					<li class = 'abc' id='projects'><a href='#' class='ui-link'>Projects</a></li>
+					<li class = 'abc' id='festival'><a href='#' class='ui-link'>Festival Screening</a></li>
+					<li class = 'abc' id='market'><a href='#' class='ui-link'>Market Screening</a></li>
+					<li class = 'abc' id='promos'><a href='#' class='ui-link'>Promos</a></li>
+				</ul>
+			</div>
+	</div>  
+	 
+	<div id="m-abc-list-2" data-role="page" data-add-back-btn="true">	
+			<div data-role="header" data-position="fixed">
+	        	<h1 class="m_font">ABC Lists</h1>
+	        </div>
+			<div class="segmented-control ui-bar-c">
+				<div data-role="controlgroup" data-type="horizontal">
+					<a class='a-btn' data-role="button" class="ui-control-active">A</a>
+					<a class='b-btn' data-role="button" class="ui-control-inactive">B</a>
+					<a class='c-btn' data-role="button" class="ui-control-inactive">C</a>
+				</div>
+			</div>
+			<div data-role="content" id = "abc-list-2-wrapper">
+				<ul data-role='listview' data-theme='c' id='abc-list-2' >
+					<!-- Content Gets added here by jQuery -->
+				</ul>
+			</div>
+	</div>  
+	 
+	<div id="m_project_cat_menu" data-role="page" data-add-back-btn="true">	
+		<div data-role="header" data-position="fixed">
+        	<h1 class="m_font">Projects</h1>
+        </div>
+		<div data-role="content" id = "m_project_cats">
+			<ul data-role='listview' data-theme='c' id='project-cat-list'>
+				<li class = 'project' id='recommend'><a href='#' class='ui-link'>Recommend</a></li>
+				<li class = 'project' id='strong-consider'><a href='#' class='ui-link'>Strong Consider</a></li>
+				<li class = 'project' id='consider'><a href='#' class='ui-link'>Consider</a></li>
+				<li class = 'project' id='weak-consider'><a href='#' class='ui-link'>Weak Consider</a></li>
+				<li class = 'project' id='wait-see'><a href='#' class='ui-link'>Wait See</a></li>
+				<li class = 'project' id='pass'><a href='#' class='ui-link'>Pass</a></li>
+			</ul>			
+		</div>    
+	</div>
+		
+	<div id="m_abc_list" data-role="page" data-add-back-btn="true">	
+		<div data-role="header" data-position="fixed" id='abc-header'>
+        	<h1 class="m_font" id='abc-list-title'>replace</h1>
+        </div>
+		<div data-role="content" id = "abc-list-contain">
+			<!-- Content Gets added here by jQuery -->
+		</div>    
+	</div>
+		
+	<div id="m_screenings" data-role="page" data-add-back-btn="true">	
+			<div data-role="header" data-position="fixed">
+	        	<h1 class="m_font">Screenings</h1>
+	        </div>
+			<div class="segmented-control ui-bar-c">
+				<div data-role="controlgroup" data-type="horizontal">
+					<a class='screenings-date' data-role="button" class="ui-control-active">Date</a>
+					<a class='screenings-venue' data-role="button" class="ui-control-inactive">Venue</a>
+				</div>
+			</div>
+			<div data-role="content" id = "screening-list-contain">
+				<!-- Content Gets added here by jQuery -->
+			</div>
+	</div>  
+	 
+	<div id="m_my_faves" data-role="page" data-add-back-btn="true">	
+			<div data-role="header" data-position="fixed">
+	        	<h1 class="m_font">Orange Entertainment</h1>
+	        </div>
+			<div data-role="content" id = "m_my_faves_list">
+				<!-- Content Gets added here by jQuery -->
+			</div>
+	</div>  
+	 
+	<div id="m_search" data-role="page" data-add-back-btn="true"> 
+		<div data-role="header" data-position="fixed">
+        	<h1 class="m_font">Screenings</h1>
+        </div>  
+		<input type="search" name="search" id="search-basic" value="" />      
+		<a href='#' data-role = 'button' id='univ-search-button'>Search</a>    
+		<div data-role="content" id = "search-results-wrapper"> 
+         	<ul data-role='listview' data-theme='c' id='search-results'>     
+				<li nid="1" class='film'><a href='#' class='ui-link'>TEST</li>
+			</ul>
+		</div>
+	</div><!-- page ends here -->
+  </body>
+</html>
+
+

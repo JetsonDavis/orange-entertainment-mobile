@@ -1,0 +1,98 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <meta name="Description" content="Orange Entertaiment - is an L.A. based corporation that consults foreign distributors on feature film acquisitions at various stages of production and completion.">
+  <meta name="Keywords" content="Mirjam Wertheim, Steven Murphy, Susan Wrubel, Shawna Dwyer, Orange Entertainment, Feature Film, Acquistions">
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="format-detection" content="telephone=no" />
+  <title>Orange Entertainment</title>
+
+  <link href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.css" rel="stylesheet"/>
+  <link href="http://code.jquery.com/mobile/1.3.0/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet"/>
+   <link href="css/main.css" rel="stylesheet"/>
+  script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+  <script type="text/javascript" src="js/cordova.js"></script>
+  <script src="js/mobile.js"></script>
+  
+
+</head>
+
+<body>
+
+<div id="m_main_page>
+	<div id="m_login" data-role="page" data-title="Login">
+	    <div data-role="header" data-position="fixed">
+        	<h1 class="m_font">Orange Entertainment</h1>
+        </div>
+        <div data-role="content">
+            <div class='multi'> 
+				<div id="username" class='textInput'>
+					<label for="m_username" style = "margin: 20px 4px 20px 4px;">Username:</label>
+					<input type="text" id="m_username" name="name" value="" size="15" maxlength="60" class="form-text required login-box"/>							
+				</div> <!-- username -->
+				<div id='password' class='textInput'>						
+					<label for="m_pass" style = "margin: 20px 4px 20px 4px;">Password:</label> 
+					<input type="password" id="m_pass" name="pass" size="15" maxlength="128" class="form-text required login-box"/> 
+					<span class="input-help">
+						<a id = "ask-password" href="/user/password" style="margin-bottom: 30px;">forgot?</br></a>
+					</span>
+	 			</div><!-- password -->
+				<div>
+					<a href='#m_test' data-role = 'button'>Login</a>
+				</div>
+			</div>
+     	</div>
+	 </div>
+	
+	 <div id="m_splash" data-role="page" data-title="Welcome">	
+		<div data-role="header" data-position="fixed">
+        	<h1 class="m_font">Orange Entertainment</h1>
+        </div>
+		<div class="segmented-control ui-bar-d">
+			<div data-role="controlgroup" data-type="horizontal">
+				<a id='m_title_btn' href="#" data-role="button" class="ui-control-active">Title</a>
+				<a id='m_salesco_btn' href="#m_test" data-role="button" class="ui-control-inactive">Sales Co</a>
+				<a id='m_market_btn' href="#" data-role="button" class="ui-control-inactive">Market</a>
+			</div>
+		</div>
+		<div data-role="content">
+			<ul id='m_film_list' data-role="listview" data-theme="b"> 
+				
+			</ul>
+	    </div>
+	</div>
+	
+	<div id="m_film_detail" data-role="page" data-add-back-btn="true">	
+		<div data-role="header" data-position="fixed">
+        	<h1 class="m_font">Orange Entertainment</h1>
+        </div>
+		<div data-role="content" id = "m_film_results">
+			<div id="results">
+
+			</div>
+		</div>
+	</div>
+		
+	<div id="m_test" data-role="page" data-add-back-btn="true">	
+			<div data-role="header" data-position="fixed">
+	        	<h1 class="m_font">Orange Entertainment</h1>
+	        </div>
+			<div data-role="content" id = "m_film_results">
+				<div id="test_results">
+
+				</div>
+			</div>
+	</div>   
+
+    </div><!-- page ends here -->
+
+      </body>
+</html>
+
+
